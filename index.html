@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./stater/index.js"></script>
+  </head>
+  <body>
+    <div
+      style="font-weight: bolder; font-size: 40px; margin-left: 40px"
+      id="count"
+    ></div>
+    <button
+      onclick="handleClick()"
+      style="width: 100px; height: 30px; font-size: 20px"
+    >
+      Count Up
+    </button>
+
+    <script>
+      const count = createState(1);
+      document.getElementById("count").innerText = count.get();
+      const handleClick = () => {
+        count.set(count.get() + 1);
+        document.getElementById("count").innerText = count.get();
+      };
+    </script>
+  </body>
+</html>
